@@ -10,11 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var data : String?
+    
+    @IBOutlet weak var viewLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        viewLabel.text = data
     }
 
     @IBAction func buttonPressed(_ sender: Any) {

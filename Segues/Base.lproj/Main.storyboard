@@ -49,6 +49,7 @@
                     </view>
                     <connections>
                         <outlet property="textField" destination="iy3-lH-n71" id="dXl-s1-wNY"/>
+                        <outlet property="viewLabel" destination="kas-Ov-6b3" id="CCq-5h-NCT"/>
                         <segue destination="mjV-x9-MV4" kind="show" identifier="goToSecondScreen" id="JML-h5-jyq"/>
                     </connections>
                 </viewController>
@@ -80,6 +81,7 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wM2-sF-K9z"/>
+                                    <action selector="sendDataBack:" destination="mjV-x9-MV4" eventType="touchUpInside" id="OIq-KT-2AU"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MP2-lA-bA5">
@@ -95,6 +97,8 @@
                     </view>
                     <connections>
                         <outlet property="label" destination="dlp-kI-wT2" id="JMt-ru-uWY"/>
+                        <outlet property="textField" destination="MP2-lA-bA5" id="1SN-H3-6qE"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="sendDataBack" id="QAn-hb-hNd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPY-lY-R3y" userLabel="First Responder" sceneMemberID="firstResponder"/>

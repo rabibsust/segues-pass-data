@@ -14,6 +14,8 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
     
+    @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,6 +24,16 @@ class SecondViewController: UIViewController {
     }
     
 
+    @IBAction func sendDataBack(_ sender: Any) {
+        performSegue(withIdentifier: "sendDataBack", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sendDataBack" {
+            let firstVC = segue.destination as! ViewController
+            firstVC.data = textField.text!
+        }
+    }
     /*
     // MARK: - Navigation
 
