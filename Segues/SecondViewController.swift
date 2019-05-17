@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol CanReceive {
+    func dataReceived(data: String)
+}
+
 class SecondViewController: UIViewController {
 
+    var delegate : CanReceive?
+    
     var textPassOver : String?
     
     @IBOutlet weak var label: UILabel!
@@ -25,15 +31,10 @@ class SecondViewController: UIViewController {
     
 
     @IBAction func sendDataBack(_ sender: Any) {
-        performSegue(withIdentifier: "sendDataBack", sender: self)
+        delegate?.dataReceived(data: textField.text!)
+        dismiss(animated: true, completion: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "sendDataBack" {
-            let firstVC = segue.destination as! ViewController
-            firstVC.data = textField.text!
-        }
-    }
     /*
     // MARK: - Navigation
 
